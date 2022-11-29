@@ -1,0 +1,30 @@
+﻿@{
+    
+}
+<div class="sidebar-section width-24">
+<nav>
+    <ul>
+        <li>
+            <i id="sidebar" class="fa-solid fa-angle-left"></i>
+        </li>
+        <li>
+            <a class="logo" asp-controller="home" asp-action="index">
+                <img  src="~/img/logo.jpg"/>
+                <span class="nav-item">Online Shop</span>
+            </a>
+        </li>
+        <li>
+            <a asp-controller="Category" asp-action="Index">
+                <i class="fa-solid fa-list"></i>
+                <span class="nav-item">Category</span>
+            </a>
+        </li>
+        <li>
+            <a asp-controller="Product" asp-action="Index">
+                <i class="fa-brands fa-product-hunt"></i>
+                <span class="nav-item">Product</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+</div>
