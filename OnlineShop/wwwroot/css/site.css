@@ -201,14 +201,17 @@ html {
 .content .top-content{
     color: var(--primary-color);
 }
-.table {
-    border-collapse: collapse;
-    margin: 2.5rem 0;
-    font-size: 1.5rem;
-    min-width: 100%;
-    overflow: hidden;
-    border-radius: 0.5rem 0.5rem 0 0;
-}
+    .content .formAddOrEdit{
+        font-size:1.4rem;
+    }
+    .table {
+        border-collapse: collapse;
+        margin: 2.5rem 0;
+        font-size: 1.5rem;
+        min-width: 100%;
+        overflow: hidden;
+        border-radius: 0.5rem 0.5rem 0 0;
+    }
 table thead tr {
     color: #fff;
     background: #34AF6D;

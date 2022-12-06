@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using OnlineShop.Components;
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -18,7 +19,7 @@
     <div class="main">
         <partial name="_Header"></partial>
         <div class="page-wrap">
-            <partial name="SideBarDefault"></partial>
+            @await Component.InvokeAsync(typeof(SidebarViewComponent))
             <div class="page-content">
                 @RenderBody()
             </div>

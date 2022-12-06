@@ -2,76 +2,81 @@
 @{
     ViewData["Title"] = "Index";
 }
-<div class="container p-3">
-    <div class="row pt-4">
-        <div class="col-6">
-            <h2 class="text-primary">Product List</h2>
+<div class="content">
+    <div class="content-list">
+        <div class="row pt-4">
+            <div class="col-6">
+                <h2 class="top-content">Product List</h2>
+            </div>
+            <div class="col-6 text-end">
+                <a asp-controller="Product" asp-action="AddNewProduct" class="btn btn-primary">
+                    <i class="fa-solid fa-circle-plus"></i> &nbsp;Create New Product</a>
+            </div>
         </div>
-        <div class="col-6 text-end">
-            <a asp-controller="Product" asp-action="AddNewProduct" class="btn btn-primary">
-                <i class="fa-solid fa-circle-plus"></i> &nbsp;Create New Product</a>
-        </div>
-    </div>
 
-    <table class="table table-bordered table-striped">
-        <thead>
-            <tr>
-                <th>
-                    Product Name
-                </th>
-                <th>
-                    Display Order
-                </th>
-                <th>
-                    DateCreate
-                </th>
-                <th>
-                    Title
-                </th>
-                <th>
-                    Description
-                </th>
-                <th>    
-                    Action
-                </th>
-                <th>
-                    Price
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach(var obj in Model)
-            {
+        <table class="table">
+            <thead>
                 <tr>
-                    <td class="col-2">
-                        @obj.Name
-                    </td>
-                    <td class="col-2">
-                        @obj.DisplayOrder
-                    </td>
-                    <td class="col-2">
-                        @obj.DateCreated
-                    </td>
-                    <td class="col-2">
-                        @obj.Title
-                    </td>
-                    <td class="col-2">
-                        @obj.Description
-                    </td>
-                    <td class="col-1">
-                        <input value="@obj.Active" type="checkbox"/>
-                    </td>
-                    <td>
-                        @obj.Price
-                    </td>
-                    <td class="col-2">
-                        <a class="btn-sm btn-primary" asp-controller="Category" asp-action="EditCategory" asp-route-id="@obj.ProductID">
-                            <i class="fa-regular fa-pen-to-square"></i> 
-                            Edit
-                        </a>
-                    </td>
+                    <th>
+                        Product Name
+                    </th>
+                    <th>
+                        Display Order
+                    </th>
+                    <th>
+                        DateCreate
+                    </th>
+                    <th>
+                        Title
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                    <th>    
+                        Active
+                    </th>
+                    <th>
+                        Price
+                    </th>
+                    <th>
+                        Action
+                    </th>
                 </tr>
-            }
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @foreach(var obj in Model)
+                {
+                    <tr>
+                        <td class="col-2">
+                            @obj.Name
+                        </td>
+                        <td class="col-2">
+                            @obj.DisplayOrder
+                        </td>
+                        <td class="col-2">
+                            @obj.DateCreated
+                        </td>
+                        <td class="col-2">
+                            @obj.Title
+                        </td>
+                        <td class="col-2">
+                            @obj.Description
+                        </td>
+                        <td class="col-1">
+                            @Html.CheckBoxFor(c => obj.Active, new { @checked = "checked" })
+                        </td>
+                        <td>
+                            @obj.Price
+                        </td>
+                        <td class="col-2">
+                            <a class="item-action" asp-controller="Category" asp-action="EditCategory" asp-route-id="@obj.ProductID">
+                                <i class="fa-regular fa-pen-to-square"></i> 
+                                Edit
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 </div>
