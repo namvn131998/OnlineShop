@@ -3,6 +3,7 @@
     --black-color: #000;
     --text-color: #333;
     --scroll-color: hsl(44, 94%, 37%);
+    --border-color: rgba(147,157,170,.2);
     --primary-color: #34AF6D;
     --header-height: 170px;
     --header-nav-min-height: 62px;
@@ -244,6 +245,27 @@ table thead tr {
     border: 1px solid #4AD489;
     text-decoration: none;
 }
+/* --------------*/
+/*Form*/
+#d-login {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.d-login-form {
+    background: var(--white-color);
+    width: 400px;
+    border-radius: 0.5rem;
+    padding: 1rem 1rem 1rem 1rem;
+}
+    .d-login-form .d-login-title {
+        text-align: center;
+        border-bottom: 1px solid var(--border-color);
+        padding: 5px;
+    }
+    .d-login-form >button{
+        width:100%;
+    }
 /* --------------*/
 @keyframes fadeIn {
     from {
